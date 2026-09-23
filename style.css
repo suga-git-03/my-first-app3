@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --ink: #14212b;
+    --muted: #6c7b82;
+    --paper: #f3efe6;
+    --line: #d8d1c4;
+    --lime: #d8f36a;
+    --orange: #f3724d;
+    --blue: #72d6db;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: "Space Mono", monospace;
+}
+
+.game-shell { max-width: 1120px; margin: 0 auto; padding: 34px 28px 28px; }
+.topbar { display: flex; align-items: end; justify-content: space-between; margin-bottom: 22px; }
+.eyebrow { color: var(--orange); font-size: 11px; letter-spacing: .15em; font-weight: 700; margin: 0 0 4px; }
+h1 { font: 800 clamp(40px, 7vw, 78px)/.85 "Barlow Condensed", sans-serif; letter-spacing: .025em; margin: 0; }
+.status { font-size: 11px; letter-spacing: .07em; font-weight: 700; padding-bottom: 5px; }
+.status-dot { display: inline-block; width: 9px; height: 9px; background: var(--orange); border-radius: 50%; margin-right: 8px; box-shadow: 0 0 0 4px #f8c8b9; }
+.game-card { position: relative; overflow: hidden; padding: 12px; background: #172833; box-shadow: 10px 10px 0 #d4ccc0; }
+.hud { display: flex; align-items: center; gap: 32px; padding: 9px 12px 13px; color: #f6f4ed; }
+.hud-group { display: flex; align-items: center; gap: 12px; }
+.hud-label { color: var(--blue); font-size: 10px; letter-spacing: .12em; }
+.hud strong { font-size: 14px; letter-spacing: .08em; }
+.score-group { margin-left: auto; }
+.hearts { display: flex; gap: 5px; }
+.hearts span { width: 15px; height: 15px; background: var(--orange); transform: rotate(45deg); border-radius: 2px; }
+.hearts span.empty { background: #40525a; }
+canvas { display: block; width: 100%; height: auto; background: #8cdce0; image-rendering: pixelated; }
+.message { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); width: min(90%, 430px); padding: 30px; color: var(--ink); background: var(--lime); text-align: center; box-shadow: 8px 8px 0 rgba(20,33,43,.4); }
+.message h2 { font: 800 42px/1 "Barlow Condensed", sans-serif; margin: 0 0 9px; }
+.message p { font-size: 12px; margin: 0; }
+.controls { display: flex; align-items: center; gap: 22px; padding-top: 24px; font-size: 11px; }
+kbd { display: inline-flex; align-items: center; justify-content: center; min-width: 27px; height: 25px; margin-right: 4px; padding: 0 6px; border: 1px solid var(--line); border-bottom-width: 3px; border-radius: 3px; font: 700 11px "Space Mono", monospace; background: #faf8f2; }
+button { margin-left: auto; padding: 10px 16px; border: 2px solid var(--ink); color: var(--ink); background: transparent; font: 700 11px "Space Mono", monospace; cursor: pointer; }
+button:hover { color: var(--paper); background: var(--ink); }
+button span { color: var(--orange); font-size: 16px; margin-left: 5px; }
+
+@media (max-width: 650px) {
+    .game-shell { padding: 22px 14px; }
+    .topbar { align-items: start; flex-direction: column; gap: 16px; }
+    .hud { gap: 12px; padding-inline: 4px; }
+    .hud-group { gap: 7px; }
+    .hud-label { font-size: 8px; }
+    .hud strong { font-size: 10px; }
+    .hearts span { width: 11px; height: 11px; }
+    .controls { flex-wrap: wrap; gap: 12px; }
+    button { margin-left: 0; }
+}

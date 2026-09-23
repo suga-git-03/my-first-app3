@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>STAR RUNNER | 横スクロールアクション</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    ようこそ私のページへ
+    <main class="game-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">MINI ADVENTURE 01</p>
+                <h1>STAR RUNNER</h1>
+            </div>
+            <div class="status"><span class="status-dot"></span> SYSTEM ONLINE</div>
+        </header>
+
+        <section class="game-card" aria-label="STAR RUNNER ゲーム画面">
+            <div class="hud">
+                <div class="hud-group">
+                    <span class="hud-label">HP</span>
+                    <div class="hearts" aria-label="残り体力"><span></span><span></span><span></span></div>
+                </div>
+                <div class="hud-group score-group">
+                    <span class="hud-label">SCORE</span>
+                    <strong id="score">000000</strong>
+                </div>
+                <div class="hud-group">
+                    <span class="hud-label">DISTANCE</span>
+                    <strong><span id="distance">0</span>m</strong>
+                </div>
+            </div>
+            <canvas id="gameCanvas" width="960" height="540" aria-label="ゲームキャンバス"></canvas>
+            <div id="message" class="message" hidden></div>
+        </section>
+
+        <footer class="controls">
+            <div><kbd>A</kbd><kbd>D</kbd> 移動</div>
+            <div><kbd>SPACE</kbd> ジャンプ</div>
+            <div><kbd>J</kbd> 攻撃</div>
+            <button id="restartButton" type="button">RESTART <span>↗</span></button>
+        </footer>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
